@@ -58,6 +58,13 @@ class Grafico():
 
         st.pyplot(fig)
 
+    def lina_char(self,campo):
+        st.line_chart(campo)
+
+    
+    def area_char(self,campo):   
+        st.area_chart(campo)
+
 
     def ErrorValoresNumerico(self,cadena1,cadena2):
       
@@ -76,7 +83,7 @@ class Grafico():
         with col1:
             datos = st.radio(
             "Elegir graficos",
-            ('No Aplicar','histograma', 'Grafica Barra','Violint'))
+            ('No Aplicar','histograma', 'Grafica Barra','Violint','Area Char','Linea Char'))
         
        
         with col2:
@@ -120,4 +127,18 @@ class Grafico():
 
             if datos=="No Aplicar":
                 st.write("")
+
+            if datos=="Area Char":
+                elegirAChar = st.selectbox(
+                "Elegir filtro",
+                lista)
+            
+                self.area_char(df[elegirAChar])
+            
+            if datos=="Linea Char":
+                elegirLChar = st.selectbox(
+                "Elegir filtro",
+                lista)
+            
+                self.lina_char(df[elegirLChar])
         
