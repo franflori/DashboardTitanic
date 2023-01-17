@@ -48,5 +48,4 @@ yfinance==0.1.84
 seaborn==0.12.2
 plotnine==0.10.1
 KNeighborsClassifier==1.2.0
-accuracy_score==1.2.0
-DecisionTreeClassifier==1.2.0
+
